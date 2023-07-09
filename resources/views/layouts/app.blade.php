@@ -6,6 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
+        @livewireStyles
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -13,9 +14,6 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-        {{-- LiveWire Syles --}}
-        @livewireStyles
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -35,7 +33,7 @@
                 {{ $slot }}
             </main>
         </div>
-        {{-- LiveWire Scripts --}}
-        @livewireScripts
     </body>
+    <livewire:scripts />
+    {{-- <script src="/livewire/livewire.js?id=90730a3b0e7144480175"></script> --}}
 </html>
