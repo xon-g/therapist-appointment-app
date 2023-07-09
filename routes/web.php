@@ -3,7 +3,6 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TherapistController;
-use App\Http\Livewire\Dashboard;
 use Illuminate\Support\Facades\Route;
 
 /*

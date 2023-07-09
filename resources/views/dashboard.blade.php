@@ -4,5 +4,5 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-    @livewire('dashboard')
+    @livewire('therapist-table')
 </x-app-layout>

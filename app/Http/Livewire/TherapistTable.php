@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\User;
 use Livewire\Component;
 
-class Dashboard extends Component
+class TherapistTable extends Component
 {   
 
     public $therapists;
@@ -31,7 +31,7 @@ class Dashboard extends Component
                 ->where('name', 'like', '%' . $this->input . '%')
                 ->orWhere('username', 'like', '%' . $this->input . '%')
                 ->orWhere('address', 'like', '%' . $this->input . '%')
-                ->orWhereHas('services', function($q) {
+                ->orWhereHas('services', function ($q) {
                     $q->where('name', 'like', '%' . $this->input . '%');
                 })->get();
                 ;
@@ -42,6 +42,6 @@ class Dashboard extends Component
 
     public function render()
     {
-        return view('livewire.dashboard');
+        return view('livewire.therapist-table');
     }
 }
