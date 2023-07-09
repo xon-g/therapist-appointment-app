@@ -10,6 +10,12 @@ Status:
 - User dashboards displays list of therapists ✓
 - Each therapist has a name, services offered, and a Book Now button ✓
 
+User Credentials:
+user1@example.com (user2, user3, etc.)
+password
+
+therapist1@example.com
+password
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
