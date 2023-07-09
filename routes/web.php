@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TherapistController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +31,20 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+Route::middleware(['auth', 'role:admin'])->group(function () {
+
+    Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
+
+
+}); // End Admin Middleware
+
+
+Route::middleware(['auth', 'role:therapist'])->group(function () {
+
+    Route::get('/therapist/dashboard', [TherapistController::class, 'TherapistDashboard'])->name('therapist.dashboard');
+
+}); // End Therapist Middleware
+
+ 
