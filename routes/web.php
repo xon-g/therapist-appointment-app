@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TherapistController;
+use App\Http\Livewire\Dashboard;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,4 +48,9 @@ Route::middleware(['auth', 'role:therapist'])->group(function () {
 
 }); // End Therapist Middleware
 
+Route::middleware(['auth', 'role:user'])->group(function () {
+
+    // Route::get('/dashboard', Dashboard::class)->middleware(['auth'])->name('dashboard');
+
+}); // End User Middleware
  
