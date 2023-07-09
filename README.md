@@ -9,6 +9,7 @@ Status:
 - Login and Registration for users ✓
 - User dashboards displays list of therapists ✓
 - Each therapist has a name, services offered, and a Book Now button ✓
+- Search Functionality ✓
 
 User Credentials:
 user1@example.com (user2, user3, etc.)
