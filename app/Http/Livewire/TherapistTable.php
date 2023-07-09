@@ -22,6 +22,11 @@ class TherapistTable extends Component
     
     public $input = "";
 
+    public function updated($name, $value)
+    {
+        if ($name === 'input') {$this->search();};
+    }
+
     public function search()
     {   
         if ($this->input === "" ) {

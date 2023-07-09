@@ -1,13 +1,4 @@
 <div>
-<div class="py-12">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-            <div class="p-6 text-gray-900 dark:text-gray-100 d-flex flex-row justify-content-between">
-                <div wire:click="gago" class="text-start">You're logged in!</div>
-            </div>
-        </div>
-    </div>
-</div>
 
 {{-- Content --}}
 <div class="py-12">
@@ -33,7 +24,7 @@
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"></th>
                             </tr>
                         </thead>
-                        <tbody wire:model='therapists' class="bg-white divide-y divide-gray-200">
+                        <tbody class="bg-white divide-y divide-gray-200">
                             @foreach ($therapists as $therapist)
                             <tr>
                                 <td class="px-6 py-4 whitespace-nowrap text-gray-500 font-bold truncate max-w-[100px]">
