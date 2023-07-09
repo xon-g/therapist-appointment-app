@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
                 'email' => "user{$i}@example.com",
                 'role' => 'user',
                 'password' => Hash::make('password'),
+                'address' => $faker->address,
             ]);
         }
 
@@ -43,6 +44,7 @@ class DatabaseSeeder extends Seeder
                 'email' => "therapist{$i}@example.com",
                 'role' => 'therapist',
                 'password' => Hash::make('password'),
+                'address' => $faker->address,
             ]);
         }
 
