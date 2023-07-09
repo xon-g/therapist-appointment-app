@@ -33,7 +33,7 @@
                 {{ $slot }}
             </main>
         </div>
+        <livewire:scripts />
+        {{-- <script src="/livewire/livewire.js?id=90730a3b0e7144480175"></script> --}}
     </body>
-    <livewire:scripts />
-    {{-- <script src="/livewire/livewire.js?id=90730a3b0e7144480175"></script> --}}
 </html>

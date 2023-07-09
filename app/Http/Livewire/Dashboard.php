@@ -17,35 +17,28 @@ class Dashboard extends Component
 
     public function loadTherapists()
     {   
-
         $this->therapists = User::where('role', 'therapist')->get();
     }
     
-    public $name = "";
-    public $services = "";
-
-    public $isTrue = 'true';
+    public $input = "";
 
     public function search()
     {   
-        $query = User::where('role', 'admin')->get(); 
-        if ($this->name) {
-            $this->therapists = User::where('role', 'admin')->where('name', $this->name)->get();
+        if ($this->input === "" ) {
+            $this->therapists = User::where('role', 'therapist')->get();
+        } else {
+            $this->therapists = User::where('role', 'therapist')
+                ->where('name', 'like', '%' . $this->input . '%')
+                ->orWhere('username', 'like', '%' . $this->input . '%')
+                ->orWhere('address', 'like', '%' . $this->input . '%')
+                ->orWhereHas('services', function($q) {
+                    $q->where('name', 'like', '%' . $this->input . '%');
+                })->get();
+                ;
+            ;
         }
-            // if ($this->services) {
-            //     $query->where('services', 'LIKE', '%' . $this->services . '%');
-            // }
-        
 
-        // if (count($query) > 0 ) {
-        //     $this->therapists = $query;
-        // };
-
-        if ($this->name === '' or $this->services === "") {
-            $this->therapists =  User::where('role', 'therapist')->get();
-        }
     }
-
 
     public function render()
     {
