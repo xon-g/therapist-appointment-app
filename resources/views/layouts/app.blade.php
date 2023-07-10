@@ -13,7 +13,7 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/bootstrap.js'])
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -33,7 +33,9 @@
                 {{ $slot }}
             </main>
         </div>
-        <livewire:scripts />
+        {{-- <livewire:scripts /> --}}
+        @livewireScripts
         {{-- <script src="/livewire/livewire.js?id=90730a3b0e7144480175"></script> --}}
+        @stack('scripts')
     </body>
 </html>
