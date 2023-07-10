@@ -28,7 +28,7 @@
 
                 <div class="w-3/5">
                     <!-- Content for the right div -->
-                    @livewire('calendar-component')
+                    @livewire('calendar-component', ['therapist'=>$therapist])
                 </div>
 
             </div>
