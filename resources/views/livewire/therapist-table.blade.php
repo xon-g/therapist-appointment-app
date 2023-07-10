@@ -28,12 +28,12 @@
                             @foreach ($therapists as $therapist)
                             <tr>
                                 <td class="px-6 py-4 whitespace-nowrap text-gray-500 font-bold truncate max-w-[100px]">
-                                    <span class="cursor-pointer">{{ $therapist->name }}</span>
+                                    <a href="{{ route('appointments.book-appointment', $therapist->id) }}" >{{ $therapist->name }}</a>
                                 </td>
                                 <td class="px-6 py-4 text-gray-500 max-w-[150px]">{{ $therapist->services->pluck('name')->implode(', '); }}</td>
                                 <td class="px-6 py-4 text-gray-500 max-w-[120px]">{{ $therapist->address }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap text-gray-500 max-w-[70px]">
-                                    <button class="bg-blue-500 text-white py-2 px-4 rounded-lg">Book Now</button>
+                                    <a href="{{ route('appointments.book-appointment', $therapist->id) }}" class="bg-blue-500 text-white py-2 px-4 rounded-lg btn btn-primary">Book Now</a>
                                 </td>
                             </tr>
                             @endforeach

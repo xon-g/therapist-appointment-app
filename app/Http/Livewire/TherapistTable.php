@@ -29,17 +29,18 @@ class TherapistTable extends Component
 
     public function search()
     {   
+        $q = User::where('role', 'therapist');
         if ($this->input === "" ) {
-            $this->therapists = User::where('role', 'therapist')->get();
+            $this->therapists = $q->get();
         } else {
-            $this->therapists = User::where('role', 'therapist')
-                ->where('name', 'like', '%' . $this->input . '%')
-                ->orWhere('username', 'like', '%' . $this->input . '%')
-                ->orWhere('address', 'like', '%' . $this->input . '%')
-                ->orWhereHas('services', function ($q) {
-                    $q->where('name', 'like', '%' . $this->input . '%');
-                })->get();
-                ;
+            $this->therapists = $q
+            ->where('name', 'like', '%' . $this->input . '%')
+            ->orWhere('username', 'like', '%' . $this->input . '%')
+            ->orWhere('address', 'like', '%' . $this->input . '%')
+            ->orWhereHas('services', function ($q) {
+                $q->where('name', 'like', '%' . $this->input . '%');
+            })->get();
+            ;
             ;
         }
 

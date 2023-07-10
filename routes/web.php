@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TherapistController;
+use App\Http\Livewire\BookCalendar;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,9 +49,14 @@ Route::middleware(['auth', 'role:therapist'])->group(function () {
 
 }); // End Therapist Middleware
 
-Route::middleware(['auth', 'role:user'])->group(function () {
+Route::middleware(['auth', 'role:user', 'verified'])->group(function () {
+    
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 
-    // Route::get('/dashboard', Dashboard::class)->middleware(['auth'])->name('dashboard');
+    Route::get('/book-appointment/{therapistId}', BookCalendar::class)->name('appointments.book-appointment');
+    Route::get('/book-appointment/{therapistId}/create', [AppointmentController::class, 'create'])->name('appointments.create');
+
 
 }); // End User Middleware
- 
