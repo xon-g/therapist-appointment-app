@@ -48,8 +48,19 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    // Services the therapists have
     public function services()
     {
         return $this->belongsToMany(Service::class, 'service_therapist');
+    }
+
+
+    public function userApointments()
+    {
+        return $this->hasMany(Appointment::class, 'user_id');
+    }
+    public function therapistApointments()
+    {
+        return $this->hasMany(Appointment::class, 'therapist_id');
     }
 }

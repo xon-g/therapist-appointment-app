@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id'); // Foreign key to reference the user making the appointment
             $table->unsignedBigInteger('therapist_id'); // Foreign key to reference the therapist being booked
-            $table->dateTime('appointment_date');
+            $table->dateTime('appointment_start_date');
+            $table->dateTime('appointment_end_date');
             $table->text('notes')->nullable();
             $table->timestamps();
 
